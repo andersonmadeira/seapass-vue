@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <a-layout class="layout-wrapper">
+    <Sidebar/>
+    <a-layout style="padding: 0 24px 24px">
+      <a-breadcrumb style="margin: 16px 0">
+        <a-breadcrumb-item>Home</a-breadcrumb-item>
+        <a-breadcrumb-item>Category</a-breadcrumb-item>
+        <a-breadcrumb-item>Entry</a-breadcrumb-item>
+      </a-breadcrumb>
+      <a-layout-content
+        :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
+      >Content</a-layout-content>
+    </a-layout>
+  </a-layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from "./components/Sidebar.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Sidebar
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.layout-wrapper {
+  height: 100vh;
 }
 </style>
