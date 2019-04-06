@@ -18,9 +18,11 @@
     "@vue/cli-service": "^3.5.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "prettier": "^1.16.4",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
@@ -29,10 +31,22 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "plugin:vue/recommended",
+      "eslint:recommended",
+      "prettier"
     ],
-    "rules": {},
+    "rules": {
+      "vue/max-attributes-per-line": [
+        "error",
+        {
+          "singleline": 3,
+          "multiline": {
+            "max": 3,
+            "allowFirstLine": true
+          }
+        }
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

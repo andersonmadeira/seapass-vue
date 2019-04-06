@@ -5,15 +5,10 @@
         <a-icon type="plus"/>Add new
       </a-button>
     </div>
-    <a-menu
-      mode="inline"
-      :style="{ borderRight: 0}"
-      :defaultSelectedKeys="['1']"
-      :defaultOpenKeys="['sub1']"
-    >
+    <a-menu mode="inline" :style="{ borderRight: 0}" :defaultSelectedKeys="['1']" :defaultOpenKeys="['sub1']">
       <a-sub-menu key="sub1">
         <span slot="title">
-          <a-icon type="folder"/>Category 1
+          <a-icon type="folder" as="" asdf="" />Category 1
         </span>
         <a-menu-item key="1">
           <a-icon type="file-text"/>Entry1
@@ -68,7 +63,12 @@
 
 <script>
 export default {
-  name: "Sidebar"
+  name: "Sidebar",
+  methods: {
+    teste() {
+      
+    }
+  }
 };
 </script>
 
