@@ -7,7 +7,16 @@
         <a-breadcrumb-item>Category</a-breadcrumb-item>
         <a-breadcrumb-item>Entry</a-breadcrumb-item>
       </a-breadcrumb>
-      <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"> Content </a-layout-content>
+      <a-layout-content
+        :style="{
+          background: '#fff',
+          padding: '24px',
+          margin: 0,
+          minHeight: '280px'
+        }"
+      >
+        Content
+      </a-layout-content>
     </a-layout>
   </a-layout>
 </template>
@@ -21,9 +30,7 @@ export default {
     Sidebar
   },
   methods: {
-    teste () {
-
-    }
+    teste() {}
   }
 };
 </script>
