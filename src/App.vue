@@ -2,11 +2,7 @@
   <a-layout class="layout-wrapper">
     <Sidebar />
     <a-layout style="padding: 0 24px 24px">
-      <a-breadcrumb style="margin: 16px 0">
-        <a-breadcrumb-item>Home</a-breadcrumb-item>
-        <a-breadcrumb-item>Category</a-breadcrumb-item>
-        <a-breadcrumb-item>Entry</a-breadcrumb-item>
-      </a-breadcrumb>
+      <Breadcrumb />
       <a-layout-content
         :style="{
           background: '#fff',
@@ -23,11 +19,13 @@
 
 <script>
 import Sidebar from "./components/Sidebar.vue";
+import Breadcrumb from "./components/Breadcrumb.vue";
 
 export default {
   name: "App",
   components: {
-    Sidebar
+    Sidebar,
+    Breadcrumb
   },
   methods: {
     teste() {}
