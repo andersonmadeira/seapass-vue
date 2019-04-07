@@ -6,7 +6,7 @@
     :defaultOpenKeys="['sub2']"
     v-on:select="onItemSelected"
   >
-    <a-sub-menu v-for="cat in menu.categories" v-bind:key="cat.id">
+    <a-sub-menu v-for="cat in menuItems" v-bind:key="cat.id">
       <span slot="title"> <a-icon type="folder" />{{ cat.name }} </span>
       <a-menu-item v-for="entry in cat.entries" v-bind:key="entry.id">
         <a-icon type="file-text" /> {{ entry.name }}
@@ -19,17 +19,16 @@
 export default {
   name: "MainMenu",
   methods: {
-    onItemSelected({ item, key, selectedKeys }) {
-      console.log("Item selected!", item, key, selectedKeys);
-      this.$store.commit("setActiveMenuItem", key);
+    onItemSelected({ key }) {
+      this.$store.commit("setActiveItemId", key);
     }
   },
   computed: {
     activeItem() {
-      return this.$store.getters.activeMenuItem;
+      return this.$store.getters.activeItemId;
     },
-    menu() {
-      return this.$store.getters.menu;
+    menuItems() {
+      return this.$store.getters.menuItems;
     }
   }
 };
