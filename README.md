@@ -1,8 +1,8 @@
-# seapass-vue
+# 🌊🔐 Seapass
 
 ## Introduction
 
-Credentials Manager powered by VueJS
+Credentials Manager _powered by VueJS_
 
 ## Project setup
 
