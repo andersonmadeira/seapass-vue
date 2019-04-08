@@ -30,7 +30,8 @@ const store = new Vuex.Store({
     menuItems: state => {
       return state.menuItems;
     },
-    activeItem: state => db.getEntryById(state.activeItemId),
+    activeItemId: state => state.activeItemId,
+    activeItem: state => db.getEntryById(state.route.params.entryId),
     activeCategory: state => {
       const item = db.getEntryById(state.activeItemId);
       return item !== undefined ? db.getCategoryById(item.catId) : undefined;

@@ -2,8 +2,8 @@
   <a-menu
     mode="inline"
     :style="{ borderRight: 0 }"
-    :defaultSelectedKeys="['5']"
-    :defaultOpenKeys="['sub2']"
+    :openKeys="activeSubMenu"
+    :defaultSelectedKeys="activeMenuItem"
     v-on:select="onItemSelected"
   >
     <a-sub-menu v-for="cat in menuItems" v-bind:key="cat.id">
@@ -21,10 +21,22 @@ export default {
   methods: {
     onItemSelected({ key }) {
       this.$store.commit("setActiveItemId", key);
+      this.$router.push(`/entry/${key}`);
     }
   },
   computed: {
-    activeItem() {
+    activeSubMenu() {
+      const item = this.$store.getters.activeItem;
+      if (item !== undefined) {
+        return [item.catId];
+      }
+      return [];
+    },
+    activeMenuItem() {
+      console.log("this.activeItemId", this.activeItemId);
+      return [`${this.activeItemId}`];
+    },
+    activeItemId() {
       return this.$store.getters.activeItemId;
     },
     menuItems() {
